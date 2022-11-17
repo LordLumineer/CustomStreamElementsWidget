@@ -1,0 +1,298 @@
+{
+  "testMessage": {
+    "type": "button",
+    "label": "Test message",
+    "value": "Test message",
+    "group": "Test"
+  },
+
+  "nameFontSize": {
+    "type": "number",
+    "label": "Font size (pt)",
+    "value": 30,
+    "group": "User Name"
+  },
+  "nameFontName": {
+    "type": "text",
+    "label": "Font name",
+    "value": "Myriad Pro",
+    "group": "User Name"
+  },
+  "nickColor": {
+    "type": "dropdown",
+    "label": "Nickname color:",
+    "value": "user",
+    "options": {
+      "user": "As on twitch",
+      "custom": "Specified below",
+      "remove": "Remove username"
+    },
+    "group": "User Name"
+  },
+  "customNickColor": {
+    "type": "colorpicker",
+    "label": "Custom nickname color:",
+    "value": "rgb(231, 188, 46)",
+    "group": "User Name"
+  },
+  "nameBorderSize": {
+    "type": "number",
+    "label": "Username border size (pt)",
+    "value": 0.0,
+    "group": "User Name"
+  },
+  "nameBorderColor": {
+    "type": "colorpicker",
+    "label": "Username border color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "User Name"
+  },
+  "nameBorderRadius": {
+    "type": "number",
+    "label": "Username border radius (pt)",
+    "value": 0.0,
+    "group": "User Name"
+  },
+  "nameBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Username background color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "User Name"
+  },
+
+  "msgFontName": {
+    "type": "text",
+    "label": "Font name",
+    "value": "Myriad Pro",
+    "group": "Content"
+  },
+  "msgFontSize": {
+    "type": "number",
+    "label": "Font size (pt)",
+    "value": 25,
+    "group": "Content"
+  },
+  "msgFontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "rgba(0,0,0,1)",
+    "group": "Content"
+  },
+  "msgBorderSize": {
+    "type": "number",
+    "label": "Border Size (rem)",
+    "value": 0.15,
+    "group": "Content"
+  },
+  "msgBorderRadius": {
+    "type": "number",
+    "label": "Border Radius (rem)",
+    "value": 0.5,
+    "group": "Content"
+  },
+  
+  "msgBroadcasterBorderColor":{
+    "type": "colorpicker",
+    "label": "Broadcaster message border color:",
+    "value": "rgb(231, 188, 46)",
+    "group": "Content"
+  },
+  "msgBroadcasterBackgroundColor":{
+    "type": "text",
+    "label": "Broadcaster message background color:",
+    "value": "linear-gradient(150deg, rgba(235, 193, 125, 1) 0.56%, rgba(223, 183, 124, 1) 18.54%, rgba(192, 131, 41, 1) 59.55%, rgba(234, 190, 129, 1) 87.08%, rgba(238, 220, 195, 1) 100%)",
+    "group": "Content"
+  },
+  "msgModeratorBorderColor":{
+    "type": "colorpicker",
+    "label": "Moderator message background color:",
+    "value": "rgb(12, 109, 80)",
+    "group": "Content"
+  },
+  "msgModeratorBackgroundColor":{
+    "type": "text",
+    "label": "Moderator message background color:",
+    "value": "linear-gradient(-45deg, rgba(64, 22, 23, 1) 0.56%, rgba(107, 76, 45, 1) 8.43%, rgba(165, 138, 85, 1) 38.2%, rgba(180, 169, 145, 1) 56.18%, rgba(150, 120, 87, 1) 80.34%, rgba(129, 79, 47, 1) 95.51%)",
+    "group": "Content"
+  },
+  "msgVIPBorderColor":{
+    "type": "colorpicker",
+    "label": "VIP message background color:",
+    "value": "rgb(141, 29, 1)",
+    "group": "Content"
+  },
+  "msgVIPBackgroundColor":{
+    "type": "text",
+    "label": "VIP message background color:",
+    "value": "linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)",
+    "group": "Content"
+  },
+  "msgSubscriberBorderColor":{
+    "type": "colorpicker",
+    "label": "Subscriber message background color:",
+    "value": "rgb(184, 184, 184)",
+    "group": "Content"
+  },
+  "msgSubscriberBackgroundColor":{
+    "type": "text",
+    "label": "Subscriber message background color:",
+    "value": "linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)",
+    "group": "Content"
+  },
+  "msgBaseBorderColor":{
+    "type": "colorpicker",
+    "label": "Base message background color:",
+    "value": "rgb(184, 184, 184)",
+    "group": "Content"
+  },
+  "msgBaseBackgroundColor":{
+    "type": "text",
+    "label": "Base message background color:",
+    "value": "linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)",
+    "group": "Content"
+  },
+  
+  "iconSize": {
+    "type": "number",
+    "label": "Badges Size (pt)",
+    "value": 30,
+    "group": "Icons"
+  },
+  "iconBorderSize": {
+    "type": "number",
+    "label": "Username border size (pt)",
+    "value": 0.0,
+    "group": "Icons"
+  },
+  "iconBorderColor": {
+    "type": "colorpicker",
+    "label": "Icon border color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "Icons"
+  },
+  "iconBorderRadius": {
+    "type": "number",
+    "label": "Icon border radius (pt)",
+    "value": 0.0,
+    "group": "Icons"
+  },
+  "iconBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Icon background color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "Icons"
+  },
+  "iconsapparence": {
+    "label": "Chose icons apparence",
+    "type": "dropdown",
+    "value": "twitch",
+    "options": {
+      "twitch": "Twitch, default twitch icons",
+      "custom": "Custom, specified below",
+      "none": "None"
+    },
+    "group": "Icons"
+  },
+  "iconBroadcaster": {
+    "type": "text",
+    "label": "Your link for broadcaster icon",
+    "value": "",
+    "group": "Icons"
+  },
+  "iconModerator": {
+    "type": "text",
+    "label": "Your link for moderator icon",
+    "value": "",
+    "group": "Icons"
+  },
+  "iconVip": {
+    "type": "text",
+    "label": "your link for vip icon",
+    "value": "",
+    "group": "Icons"
+  },
+  "iconSubscriber": {
+    "type": "text",
+    "label": "your link for subscriber icon",
+    "value": "",
+    "group": "Icons"
+  },
+  "iconBase": {
+    "type": "text",
+    "label": "your link for base icon",
+    "value": "",
+    "group": "Icons"
+  },
+
+  "SideBarWidth": {
+    "type": "number",
+    "label": "Side-bar width (%)",
+    "value": 10,
+    "group": "Side Bar"
+  },
+  "SideBarRatio": {
+    "type": "number",
+    "label": "Main side-bar ratio",
+    "value": 0.9,
+    "group": "Side Bar"
+  },
+  "sideBarColor": {
+    "type": "colorpicker",
+    "label": "Side-bar Color",
+    "value": "rgba(231,188,46,1)",
+    "group": "Side Bar"
+  },
+  "SidebarAnimation": {
+    "type": "number",
+    "label": "Sidebar annimation Duration (s)",
+    "value": 2,
+    "group": "Settings"
+  },
+  
+  "messagesLimit": {
+    "type": "number",
+    "label": "Messages limit",
+    "value": 15,
+    "group": "Settings"
+  },
+  "hideCommands": {
+    "label": "Hide lines starting with ! (!command)",
+    "type": "dropdown",
+    "value": "yes",
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "group": "Settings"
+  },
+  "ignoredUsers": {
+    "label": "Ignored users (comma separated)",
+    "type": "text",
+    "value": "StreamElements,OtherBot",
+    "group": "Settings"
+  },
+
+  "EnterAnimation": {
+    "type": "number",
+    "label": "Annimation Duration (ms)",
+    "value": 500,
+    "group": "Settings"
+  },
+
+  "widgetName": {
+    "type": "hidden",
+    "value": "Custom chat"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "LordLumineer"
+  },
+  "widgetVersion": {
+    "type": "hidden",
+    "value": "1.0"
+  },
+  "widgetUpdateUrl": {
+    "type": "hidden",
+    "value": "https://github.com/StreamElements/widgets/blob/master/CustomChat/"
+  }
+}
