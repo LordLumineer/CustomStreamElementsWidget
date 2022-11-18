@@ -76,64 +76,64 @@ window.addEventListener('onEventReceived', function (obj) {
         document.querySelectorAll(`.message[data-sender=${sender}]`).forEach(el => el.remove());
         return;
     }
-    //--
-    //const fieldData = {
-    //    nickColor:"user",
-    //    customNickColor:"rgb(231, 188, 46)",
-    //
-    //    msgBroadcasterBorderColor:'rgb(231, 188, 46)',
-    //    msgBroadcasterBackgroundColor:'linear-gradient(150deg, rgba(235, 193, 125, 1) 0.56%, rgba(223, 183, 124, 1) 18.54%, rgba(192, 131, 41, 1) 59.55%, rgba(234, 190, 129, 1) 87.08%, rgba(238, 220, 195, 1) 100%)',
-    //    
-    //    msgModeratorBorderColor:'rgb(12, 109, 80)',
-    //    msgModeratorBackgroundColor:'linear-gradient(-45deg, rgba(64, 22, 23, 1) 0.56%, rgba(107, 76, 45, 1) 8.43%, rgba(165, 138, 85, 1) 38.2%, rgba(180, 169, 145, 1) 56.18%, rgba(150, 120, 87, 1) 80.34%, rgba(129, 79, 47, 1) 95.51%)',
-    //    
-    //    msgVIPBorderColor:'rgb(141, 29, 1)',
-    //    msgVIPBackgroundColor:'linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)',
-    //    
-    //    msgSubscriberBorderColor:'rgb(184, 184, 184)',
-    //    msgSubscriberBackgroundColor:'linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)',
-    //    
-    //    msgBaseBorderColor:'rgb(184, 184, 184)',
-    //    msgBaseBackgroundColor:'linear-gradient(150deg, rgba(155, 155, 152, 1) 3.37%, rgba(164, 165, 167, 1) 13.38%, rgba(174, 176, 183, 1) 21.91%, rgba(159, 163, 170, 1) 35.18%, rgba(120, 129, 135, 1) 60.54%, rgba(101, 112, 118, 1) 71.91%, rgba(139, 148, 154, 1) 100%)',
-    //
-    //    iconsapparence:"twitch",
-    //    iconBroadcaster:"https://cdn.discordapp.com/emojis/940579229588938862.webp",
-    //    iconModerator:"https://cdn.discordapp.com/emojis/941119965946327040.webp",
-    //    iconVip:"https://cdn.discordapp.com/emojis/940579334463315978.webp",
-    //    iconSubscriber:"https://cdn.discordapp.com/emojis/940579286539206697.webp",
-    //    iconBase:"https://cdn.discordapp.com/emojis/940578850805514260.webp",
-    //
-    //    messagesLimit:30,
-    //    hideCommands:"yes",
-    //    ignoredUsers:"StreamElements,OtherBot",
-    //};
-    //nickColor = fieldData.nickColor;
-    //customNickColor = fieldData.customNickColor;
-    //
-    //msgBroadcasterBorderColor = fieldData.msgBroadcasterBorderColor;
-    //msgBroadcasterBackgroundColor = fieldData.msgBroadcasterBackgroundColor;
-    //msgModeratorBorderColor = fieldData.msgModeratorBorderColor;
-    //msgModeratorBackgroundColor = fieldData.msgModeratorBackgroundColor;
-    //msgVIPBorderColor = fieldData.msgVIPBorderColor;
-    //msgVIPBackgroundColor = fieldData.msgVIPBackgroundColor;
-    //msgSubscriberBorderColor = fieldData.msgSubscriberBorderColor;
-    //msgSubscriberBackgroundColor = fieldData.msgSubscriberBackgroundColor;
-    //msgBaseBorderColor = fieldData.msgBaseBorderColor;
-    //msgBaseBackgroundColor = fieldData.msgBaseBackgroundColor;
-    //
-    //customIcon=fieldData.iconsapparence;
-    //iconBroadcaster=fieldData.iconBroadcaster;
-    //iconModerator=fieldData.iconModerator;
-    //iconVip=fieldData.iconVip;
-    //iconSubscriber=fieldData.iconSubscriber;
-    //iconBase=fieldData.iconBase;
-    //
-    //messagesLimit = fieldData.messagesLimit;
-    //hideCommands = fieldData.hideCommands;
-    //channelName = "lordlumineer";//obj.detail.channel.username;
-    //
-    //ignoredUsers = fieldData.ignoredUsers.toLowerCase().replace(" ", "").split(",");
-    //--
+    /*
+    const fieldData = {
+
+        nickColor:"user",
+        customNickColor:"rgb(231, 188, 46)",
+        
+        msgBroadcasterBorderColor:"rgb(231, 188, 46)",
+        msgBroadcasterBackgroundColor:"https://cdn.streamelements.com/uploads/e54095a7-ccec-444f-873c-536aa5690d25.png",
+        msgModeratorBorderColor:"rgb(12, 109, 80)",
+        msgModeratorBackgroundColor:"https://cdn.streamelements.com/uploads/2b4de253-a703-4644-a2c0-d937b1497e7f.png",
+        msgVIPBorderColor:"rgb(141, 29, 1)",
+        msgVIPBackgroundColor:"https://cdn.streamelements.com/uploads/6c31b6a9-f01e-4a22-9b08-244795914419.png",
+        msgSubscriberBorderColor:"rgb(184, 184, 184)",
+        msgSubscriberBackgroundColor:"https://cdn.streamelements.com/uploads/eb756dcd-d00b-446c-9993-4c2df35772bd.png",
+        msgBaseBorderColor:"rgb(184, 184, 184)",
+        msgBaseBackgroundColor:"https://cdn.streamelements.com/uploads/5655662b-12ad-45c5-a194-9ec2d6dd8644.png",
+
+        iconsapparence:"custom",
+        iconBroadcaster:"https://cdn.streamelements.com/uploads/6c1d2a3a-a1c5-4723-bc85-6f66d79ed199.png",
+        iconModerator:"https://cdn.streamelements.com/uploads/438f808b-30ae-4dbd-98db-065ad63dbe83.png",
+        iconVip:"https://cdn.streamelements.com/uploads/c18c93dd-1001-495f-a9c9-ce7205e4ecaa.png",
+        iconSubscriber:"https://cdn.streamelements.com/uploads/a9ec72ed-f338-4c93-a424-3a01b945f39c.png",
+        iconBase:"https://cdn.streamelements.com/uploads/f54abf1d-4b94-45bd-94da-53542e588601.png",
+
+        messagesLimit:15,
+        hideCommands:"yes",
+        ignoredUsers:"StreamElements,OtherBot",
+    };
+
+    nickColor = fieldData.nickColor;
+    customNickColor = fieldData.customNickColor;
+    
+    msgBroadcasterBorderColor = fieldData.msgBroadcasterBorderColor;
+    msgBroadcasterBackgroundColor = fieldData.msgBroadcasterBackgroundColor;
+    msgModeratorBorderColor = fieldData.msgModeratorBorderColor;
+    msgModeratorBackgroundColor = fieldData.msgModeratorBackgroundColor;
+    msgVIPBorderColor = fieldData.msgVIPBorderColor;
+    msgVIPBackgroundColor = fieldData.msgVIPBackgroundColor;
+    msgSubscriberBorderColor = fieldData.msgSubscriberBorderColor;
+    msgSubscriberBackgroundColor = fieldData.msgSubscriberBackgroundColor;
+    msgBaseBorderColor = fieldData.msgBaseBorderColor;
+    msgBaseBackgroundColor = fieldData.msgBaseBackgroundColor;
+    
+    customIcon=fieldData.iconsapparence;
+    iconBroadcaster=fieldData.iconBroadcaster;
+    iconModerator=fieldData.iconModerator;
+    iconVip=fieldData.iconVip;
+    iconSubscriber=fieldData.iconSubscriber;
+    iconBase=fieldData.iconBase;
+    
+    messagesLimit = fieldData.messagesLimit;
+    hideCommands = fieldData.hideCommands;
+    ignoredUsers = fieldData.ignoredUsers.toLowerCase().replace(" ", "").split(",");
+
+    channelName = "lordlumineer";//obj.detail.channel.username;
+    
+    */
+
     if (obj.detail.listener !== "message") return;
 
     if (obj.detail.event.data.text.startsWith("!") && hideCommands === "yes") return;
@@ -260,7 +260,7 @@ function addMessage(data,color_in , message) {
         msgBorderColor = msgBaseBorderColor;
     }
     
-  	tchat.insertAdjacentHTML('beforeend', /*html*/ `<div id="message-${data.msgId}" data-sender="${data.userId}" class="message-row" style="--color: ${color}; --msgBorderColor: ${msgBorderColor}; --msgBackgroundColor: ${msgBackgroundColor}">
+  	tchat.insertAdjacentHTML('beforeend', /*html*/ `<div id="message-${data.msgId}" data-sender="${data.userId}" class="message-row" style="--color: ${color}; --msgBorderColor: ${msgBorderColor}; --msgBackgroundColor: url(${msgBackgroundColor})">
         <div class="row_box">
             <div class="graphics">
                 <div class="icon_box">
