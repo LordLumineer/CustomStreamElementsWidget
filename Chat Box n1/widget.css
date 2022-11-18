@@ -1,29 +1,57 @@
 :root {
-    --nameFontName: {{nameFontName}};/*'Myriad Pro';*/
-    --nameFontSize: {{nameFontSize}}pt;/*30pt;*/
-    --nameBorderSize: {{nameBorderSize}}rem;/*0.0rem;*/
-    --nameBorderColor: {{nameBorderColor}};/*rgba(0,0,0,0);*/
-    --nameBorderRadius: {{nameBorderRadius}}rem; /*0.0rem;*/
-    --nameBackgroundColor: {{nameBackgroundColor}};/*rgba(0, 0, 0, 0)*/
+    /*
+    --nameFontName: 'Myriad Pro';
+    --nameFontSize: 30pt;
+    --nameBorderSize: 0.0rem;
+    --nameBorderColor: rgba(0,0,0,0);
+    --nameBorderRadius: 0.0rem;
+    --nameBackgroundColor: rgba(0, 0, 0, 0);
 
-    --msgFontName: {{msgFontName}};/*'Myriad Pro';*/
-    --msgFontSize: {{msgFontSize}}pt;/*25pt;*/
-    --msgFontColor: {{msgFontColor}};/*rgb(0, 0, 0);*/
-    --msgBorderSize: {{msgBorderSize}}rem;/*0.15rem;*/
-    --msgBorderRadius: {{msgBorderRadius}}rem;/*0.5rem;*/
+    --msgFontName: 'Myriad Pro';
+    --msgFontSize: 25pt;
+    --msgFontColor: rgb(0, 0, 0);
+    --msgBorderSize: 0.15rem;
+    --msgBorderRadius: 0.5rem;
 
-    --iconSize: {{iconSize}}pt;/*30pt;*/
-    --iconBorderSize: {{iconBorderSize}}rem;/*0.0rem;*/
-    --iconBorderColor: {{iconBorderColor}};/*rgba(0,0,0,0);*/
-    --iconBorderRadius: {{iconBorderRadius}}rem;/*0.0rem;*/
-    --iconBackgroundColor: {{iconBackgroundColor}};/*rgba(0, 0, 0, 0);*/
+    --iconSize: 30pt;
+    --iconBorderSize: 0.0rem;
+    --iconBorderColor: rgba(0,0,0,0);
+    --iconBorderRadius: 0.0rem;
+    --iconBackgroundColor: rgba(0, 0, 0, 0);
 
-    --SideBarWidth: {{SideBarWidth}}%;/*10%;*/
-    --SideBarRatio: {{SideBarRatio}};/*0.9;*/
-    --sideBarColor: {{sideBarColor}};/*rgba(231,188,46,1);*/
-    --SidebarAnimation: {{SidebarAnimation}}s;/*2s;*/
+    --SideBarWidth: 10%;
+    --SideBarRatio: 0.9;
+    --sideBarColor: rgba(231,188,46,1);
+    --SidebarAnimation: 2s;
 
-    --EnterAnimation: {{EnterAnimation}}ms;/*500ms;*/
+    --EnterAnimation: 500ms;
+*/
+    --nameFontName: {{nameFontName}};
+    --nameFontSize: {{nameFontSize}}pt;
+    --nameBorderSize: {{nameBorderSize}}rem;
+    --nameBorderColor: {{nameBorderColor}};
+    --nameBorderRadius: {{nameBorderRadius}}rem;
+    --nameBackgroundColor: {{nameBackgroundColor}};
+
+    --msgFontName: {{msgFontName}};
+    --msgFontSize: {{msgFontSize}}pt;
+    --msgFontColor: {{msgFontColor}};
+    --msgBorderSize: {{msgBorderSize}}rem;
+    --msgBorderRadius: {{msgBorderRadius}}rem;
+
+    --iconSize: {{iconSize}}pt;
+    --iconBorderSize: {{iconBorderSize}}rem;
+    --iconBorderColor: {{iconBorderColor}};
+    --iconBorderRadius: {{iconBorderRadius}}rem;
+    --iconBackgroundColor: {{iconBackgroundColor}};
+
+    --SideBarWidth: {{SideBarWidth}}%;
+    --SideBarRatio: {{SideBarRatio}};
+    --sideBarColor: {{sideBarColor}};
+    --SidebarAnimation: {{SidebarAnimation}}s;
+
+    --EnterAnimation: {{EnterAnimation}}ms;
+    
 }
 
 body, html {
@@ -94,6 +122,7 @@ body, html {
 
 
     background: var(--msgBackgroundColor);
+    background-size: 100% 100%;
     border: var(--msgBorderSize) solid var(--msgBorderColor);
     border-radius: var(--msgBorderRadius);
 
