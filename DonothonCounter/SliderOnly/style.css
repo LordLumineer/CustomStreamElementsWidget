@@ -1,0 +1,169 @@
+:root{
+
+    --MoneycountWidth: 50px;
+
+    --lineWidth: 3px;
+    --lineColor: rgb(0, 0, 255);
+
+    --txt_color: rgb(0,0,0);
+    --bg_color: rgb(168, 168, 168);
+    --primary_color: rgb(128, 128, 255);
+    --secondary_color: rgb(0, 128, 255);
+    --accent_color: rgb(0, 0, 128);
+
+    --borderSize: 4px;
+
+}
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3jw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    font-family: 'Nunito';
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.WidgetWrap{
+
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    inset: 0;
+} 
+
+/* LEFT SIDE */
+.LeftWrap{
+    width: var(--MoneycountWidth);
+    min-width: 75px;
+
+    display: flex;
+    flex-direction: column;
+}
+.LefttopWrap{
+    display: flex;
+    flex-direction: row;
+} 
+.MoneycountWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 5px; 
+
+    background-color: var(--secondary_color);
+
+    border-radius: 5px 0px 0px 5px;
+
+    border-top: var(--primary_color) var(--borderSize) solid;
+    border-left: var(--primary_color) var(--borderSize) solid;
+    border-bottom: var(--primary_color) var(--borderSize) solid;
+    border-right: 0px; 
+} 
+.Ratio{
+    color: var(--txt_color);
+    word-wrap: normal;
+    text-align: center; 
+} 
+.Line{
+    transform: scale(120%);
+
+    border-radius: 5px;
+    width: var(--lineWidth);
+    background-color: var(--lineColor);
+
+    display: flex;
+} 
+.LeftBottom{
+  	justify-content: flex-end; 
+  	align-items: flex-end;
+    display: flex;
+} 
+.Amount{
+    color: var(--txt_color);
+    word-wrap: normal;
+    display: flex;
+    text-align: center; 
+} 
+
+/* RIGHT SIDE */
+.RightWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} 
+.RighttopWrap{
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    border-radius: 0px 5px 5px 0px;
+
+    background-color: var(--bg_color);
+    border-color: var(--primary_color);
+
+    border-top: var(--primary_color) var(--borderSize) solid;
+    border-right: var(--primary_color) var(--borderSize) solid;
+    border-bottom: var(--primary_color) var(--borderSize) solid;
+    border-left: 0px; 
+
+
+    display: flex;
+    flex-direction: row;
+} 
+.RestOfCounter{
+    display: flex;
+    padding: 5px; 
+    
+} 
+.Total{
+    color: var(--txt_color);
+    word-wrap: normal;
+    text-align: center; 
+}
+.RightBottom{
+    display: flex;
+    color: rgba(0, 0, 0, 0);
+} 
+
+
+/* ANIMATION DEFINITIONS */
+
+@keyframes twinkle {
+    0% {
+        transform: scale(100%);
+    }
+
+    50% {
+        transform: scale(120%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+
+}
+
+@keyframes opacity-twinkle {
+
+    0%,
+    100% {
+        background-color: #5e3d7515;
+    }
+
+    50% {
+        background-color: #5e3d7530;
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0px 0px 10px );
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 15px );
+    }
+}

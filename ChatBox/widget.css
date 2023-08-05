@@ -1,0 +1,228 @@
+:root {
+    /*
+    --nameFontName: 'Myriad Pro';
+    --nameFontSize: 30pt;
+    --nameBorderSize: 0.0rem;
+    --nameBorderColor: rgba(0,0,0,0);
+    --nameBorderRadius: 0.0rem;
+    --nameBackgroundColor: rgba(0, 0, 0, 0);
+
+    --msgFontName: 'Myriad Pro';
+    --msgFontSize: 25pt;
+    --msgFontColor: rgb(0, 0, 0);
+    --msgBorderSize: 0.15rem;
+    --msgBorderRadius: 0.5rem;
+
+    --iconSize: 30pt;
+    --iconBorderSize: 0.0rem;
+    --iconBorderColor: rgba(0,0,0,0);
+    --iconBorderRadius: 0.0rem;
+    --iconBackgroundColor: rgba(0, 0, 0, 0);
+
+    --SideBarWidth: 10%;
+    --SideBarRatio: 0.9;
+    --sideBarColor: rgba(231,188,46,1);
+    --SidebarAnimation: 2s;
+
+    --EnterAnimation: 500ms;
+*/
+    --nameFontName: {{nameFontName}};
+    --nameFontSize: {{nameFontSize}}pt;
+    --nameBorderSize: {{nameBorderSize}}rem;
+    --nameBorderColor: {{nameBorderColor}};
+    --nameBorderRadius: {{nameBorderRadius}}rem;
+    --nameBackgroundColor: {{nameBackgroundColor}};
+
+    --msgFontName: {{msgFontName}};
+    --msgFontSize: {{msgFontSize}}pt;
+    --msgFontColor: {{msgFontColor}};
+    --msgBorderSize: {{msgBorderSize}}rem;
+    --msgBorderRadius: {{msgBorderRadius}}rem;
+
+    --iconSize: {{iconSize}}pt;
+    --iconBorderSize: {{iconBorderSize}}rem;
+    --iconBorderColor: {{iconBorderColor}};
+    --iconBorderRadius: {{iconBorderRadius}}rem;
+    --iconBackgroundColor: {{iconBackgroundColor}};
+
+    --SideBarWidth: {{SideBarWidth}}%;
+    --SideBarRatio: {{SideBarRatio}};
+    --sideBarColor: {{sideBarColor}};
+    --SidebarAnimation: {{SidebarAnimation}}s;
+
+    --EnterAnimation: {{EnterAnimation}}ms;
+    
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+.messages {
+    position: absolute;
+    inset: 0;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.message-row  {
+    position: relative;
+    overflow: hidden;
+
+    /*border: 10pt solid rgb(0, 0, 0);*/
+    animation: MessageIn var(--EnterAnimation);
+}
+.row_box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/*----------------------------------------------------*/
+.content_box {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1pt;
+    /*border: 1pt solid rgb(255, 0, 0);*/
+}
+/*__________________________________*/
+.name_box {
+    display: inline-flex;
+
+    padding: 1pt;
+    /*border: 1pt solid rgb(0, 0, 255);*/
+}
+.name {
+    display: flex;
+
+    border: var(--nameBorderSize) solid var(--nameBorderColor);
+    border-radius: var(--nameBorderRadius);
+    background-color: var(--nameBackgroundColor);
+
+  	overflow-wrap: break-word;
+    color: var(--color);
+    font-size: var(--nameFontSize);
+    font-weight: normal;
+    font-family: var(--nameFontName), sans-serif;
+}
+/*++++++++++++++++++++++++++++++++++*/
+.msg_box {
+    display: flex;
+    
+    /*border: 1pt solid rgb(0, 255, 0);*/
+}
+.msg {
+    display: inline-block;
+    
+    margin-top: 0.25rem;
+    margin-left: 1rem;
+    padding: 0.25rem;
+
+
+    background: var(--msgBackgroundColor);
+    background-size: 100% 100%;
+    border: var(--msgBorderSize) solid var(--msgBorderColor);
+    border-radius: var(--msgBorderRadius);
+
+    overflow-wrap: anywhere;
+    color: var(--msgFontColor);
+    font-size: var(--msgFontSize);
+    font-weight: normal;
+    font-family: var(--msgFontName), sans-serif;
+}
+.emote{
+    display: inline-flex;
+    /*border: 1pt solid rgb(255, 0, 0);*/
+    
+    height: var(--msgFontSize);
+    vertical-align: middle;
+}
+
+/*----------------------------------------------------*/
+.graphics {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1pt;
+    /*border: 1pt solid rgb(0, 0, 0);*/
+}
+/*++++++++++++++++++++++++++++++++++*/
+.icon_box {
+    display: flex;
+
+    /*border: 1pt solid rgb(0, 47, 255);*/
+}
+.icons {
+    margin-bottom: 5pt;
+    
+    border: var(--iconBorderSize) solid var(--iconBorderColor);
+    border-radius: var(--iconBorderRadius);
+    background-color: var(--iconBackgroundColor);
+}
+.icons img {
+    display: flex;
+    padding: 1pt;
+    /*border: 1pt solid rgb(255, 0, 0);*/
+    width: var(--iconSize);
+}
+/*++++++++++++++++++++++++++++++++++*/
+.sideBar_box {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  	width: var(--SideBarWidth);
+    height: 100%;
+
+    animation: SideBarIn var(--SidebarAnimation);
+
+    /*border: 1pt solid rgb(255, 0, 0);*/
+}
+.sideBar {
+    display: flex;
+  	height: calc(100%*var(--SideBarRatio));
+    width: auto;
+
+  	background-color: var(--sideBarColor);
+    /*border: 1pt solid rgb(76, 90, 172);*/
+    border-radius: 5pt;
+    
+}
+.endBar{
+    display: flex;
+  	height: calc(100% - calc(100%*var(--SideBarRatio)));
+    width: auto;
+    
+    margin-top: 5pt;
+  	background-color: var(--sideBarColor);
+    /*border: 1pt solid rgb(0, 255, 34);*/
+    border-radius: 5pt;
+}
+
+
+
+
+@keyframes MessageIn {
+    from {
+        transform: translateX(20pt);
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        max-height: 400pt;
+    }
+}
+@keyframes SideBarIn {
+    from {
+        transform: scaleY(0);
+        max-height: 0%;
+    }
+    to {
+        transform: scaleY(1);
+        max-height: 100%;
+    }
+}

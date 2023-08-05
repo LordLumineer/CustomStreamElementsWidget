@@ -1,0 +1,156 @@
+{ 
+  "G1T": {
+  "type": "text",
+  "label": "1st goal text",
+  "value": "1st goal",
+  "group": "Goals"
+  },
+  "G1N": {
+    "type": "number",
+    "label": "How much for the 1st goal",
+    "value": 25,
+    "min": 0,
+    "max": 1000000,
+    "step": 1,
+    "group": "Goals"
+  },
+  "G2T": {
+    "type": "text",
+    "label": "2nd goal text",
+    "value": "2nd goal",
+    "group": "Goals"
+  },
+  "G2N": {
+    "type": "number",
+    "label": "How much for the 2nd goal",
+    "value": 50,
+    "min": 0,
+    "max": 1000000,
+    "step": 1,
+    "group": "Goals"
+  },
+  "G3T": {
+    "type": "text",
+    "label": "3rd goal text",
+    "value": "3rd goal",
+    "group": "Goals"
+  },
+  "G3N": {
+    "type": "number",
+    "label": "How much for the 3rd goal",
+    "value": 100,
+    "min": 0,
+    "max": 1000000,
+    "step": 1,
+    "group": "Goals"
+  },
+  "G4T": {
+    "type": "text",
+    "label": "4th goal text",
+    "value": "4th goal",
+    "group": "Goals"
+  },
+  "G4N": {
+    "type": "number",
+    "label": "How much for the 4th goal",
+    "value": 250,
+    "min": 0,
+    "max": 1000000,
+    "step": 1,
+    "group": "Goals"
+  },
+  "G5T": {
+    "type": "text",
+    "label": "5th goal text",
+    "value": "5th goal",
+    "group": "Goals"
+  },
+  "G5N": {
+    "type": "number",
+    "label": "How much for the 5th goal",
+    "value": 500,
+    "min": 0,
+    "max": 1000000,
+    "step": 1,
+    "group": "Goals"
+  },
+
+
+  "totalDonothon": {
+    "type": "number",
+    "label": "The total amount of money you want to raise",
+    "value": 666,
+    "min": 0,
+    "max": 69420,
+    "step": 1,
+    "group": "Configuration"
+  },
+  "reset": {
+    "type": "button",
+    "label": "Reset the total amount raised",
+    "value": "Reset",
+    "group": "Configuration"
+  },
+  "tipFactor": {
+    "type": "number",
+    "label": "How much each tip is worth",
+    "value": 1,
+    "min": 0,
+    "max": 100,
+    "step": 0.1,
+    "group": "Configuration"
+  },
+  "cheerFactor": {
+    "type": "number",
+    "label": "How many bits is 1 amount of your currency worth",
+    "value": 250,
+    "min": 0,
+    "max": 1000,
+    "step": 1,
+    "group": "Configuration"
+  },
+  "subFactor": {
+    "type": "number",
+    "label": "How much each sub is worth",
+    "value": 5,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "Configuration"
+  },
+  
+  "theme": {
+    "label": "Chat accent color",
+    "group": "Display Settings",
+    "type": "dropdown",
+    "value": "gold",
+    "options": {
+      "gold": "Gold",
+      "peach": "Peach",
+      "lavender": "Lavender",
+      "own": "Custom (set below)"
+    }
+  },
+  "customAccent": {
+    "type": "colorpicker",
+    "label": "Custom accent color",
+    "value": "rgba(255, 0, 0)",
+    "group": "Display Settings"
+  },
+
+  "displayLine": {
+    "label": "Show middle line",
+    "type": "checkbox",
+    "value": false,
+    "group": "Separation Settings"
+  },
+  "lineWidth": {
+    "type": "slider",
+    "label": "Line width (px)",
+    "value": 1,
+    "min": 0,
+    "max": 5,
+    "step": 0.1,
+    "group": "Separation Settings"
+  }
+}

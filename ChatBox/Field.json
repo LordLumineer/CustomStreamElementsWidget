@@ -1,0 +1,288 @@
+{
+  "testMessage": {
+    "type": "button",
+    "label": "Test message",
+    "value": "Test message",
+    "group": "Test"
+  },
+
+  "nameFontSize": {
+    "type": "number",
+    "label": "Font size (pt)",
+    "value": 30,
+    "group": "User Name"
+  },
+  "nameFontName": {
+    "type": "text",
+    "label": "Font name",
+    "value": "Myriad Pro",
+    "group": "User Name"
+  },
+  "nickColor": {
+    "type": "dropdown",
+    "label": "Nickname color:",
+    "value": "user",
+    "options": {
+      "user": "As on twitch",
+      "custom": "Specified below",
+      "remove": "Remove username"
+    },
+    "group": "User Name"
+  },
+  "customNickColor": {
+    "type": "colorpicker",
+    "label": "Custom nickname color:",
+    "value": "rgb(231, 188, 46)",
+    "group": "User Name"
+  },
+  "nameBorderSize": {
+    "type": "number",
+    "label": "Username border size (pt)",
+    "value": 0.0,
+    "group": "User Name"
+  },
+  "nameBorderColor": {
+    "type": "colorpicker",
+    "label": "Username border color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "User Name"
+  },
+  "nameBorderRadius": {
+    "type": "number",
+    "label": "Username border radius (pt)",
+    "value": 0.0,
+    "group": "User Name"
+  },
+  "nameBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Username background color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "User Name"
+  },
+
+  "msgFontName": {
+    "type": "text",
+    "label": "Font name",
+    "value": "Myriad Pro",
+    "group": "Content"
+  },
+  "msgFontSize": {
+    "type": "number",
+    "label": "Font size (pt)",
+    "value": 25,
+    "group": "Content"
+  },
+  "msgFontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "rgba(0,0,0,1)",
+    "group": "Content"
+  },
+  "msgBorderSize": {
+    "type": "number",
+    "label": "Border Size (rem)",
+    "value": 0.15,
+    "group": "Content"
+  },
+  "msgBorderRadius": {
+    "type": "number",
+    "label": "Border Radius (rem)",
+    "value": 0.5,
+    "group": "Content"
+  },
+  
+  "msgBroadcasterBorderColor":{
+    "type": "colorpicker",
+    "label": "Broadcaster message border color:",
+    "value": "rgb(231, 188, 46)",
+    "group": "Content"
+  },
+  "msgBroadcasterBackgroundColor":{
+    "type": "image-input",
+    "label": "Broadcaster message background:",
+    "group": "Content"
+  },
+  "msgModeratorBorderColor":{
+    "type": "colorpicker",
+    "label": "Moderator message background color:",
+    "value": "rgb(12, 109, 80)",
+    "group": "Content"
+  },
+  "msgModeratorBackgroundColor":{
+    "type": "image-input",
+    "label": "Moderator message background:",
+    "group": "Content"
+  },
+  "msgVIPBorderColor":{
+    "type": "colorpicker",
+    "label": "VIP message background color:",
+    "value": "rgb(141, 29, 1)",
+    "group": "Content"
+  },
+  "msgVIPBackgroundColor":{
+    "type": "image-input",
+    "label": "VIP message background:",
+    "group": "Content"
+  },
+  "msgSubscriberBorderColor":{
+    "type": "colorpicker",
+    "label": "Subscriber message background color:",
+    "value": "rgb(184, 184, 184)",
+    "group": "Content"
+  },
+  "msgSubscriberBackgroundColor":{
+    "type": "image-input",
+    "label": "Subscriber message background:",
+    "group": "Content"
+  },
+  "msgBaseBorderColor":{
+    "type": "colorpicker",
+    "label": "Base message background color:",
+    "value": "rgb(184, 184, 184)",
+    "group": "Content"
+  },
+  "msgBaseBackgroundColor":{
+    "type": "image-input",
+    "label": "Base message background:",
+    "group": "Content"
+  },
+  
+  "iconSize": {
+    "type": "number",
+    "label": "Badges Size (pt)",
+    "value": 30,
+    "group": "Icons"
+  },
+  "iconBorderSize": {
+    "type": "number",
+    "label": "Username border size (pt)",
+    "value": 0.0,
+    "group": "Icons"
+  },
+  "iconBorderColor": {
+    "type": "colorpicker",
+    "label": "Icon border color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "Icons"
+  },
+  "iconBorderRadius": {
+    "type": "number",
+    "label": "Icon border radius (pt)",
+    "value": 0.0,
+    "group": "Icons"
+  },
+  "iconBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Icon background color:",
+    "value": "rgba(0,0,0,0)",
+    "group": "Icons"
+  },
+  "iconsapparence": {
+    "label": "Chose icons apparence",
+    "type": "dropdown",
+    "value": "twitch",
+    "options": {
+      "twitch": "Twitch, default twitch icons",
+      "custom": "Custom, specified below",
+      "none": "None"
+    },
+    "group": "Icons"
+  },
+  "iconBroadcaster": {
+    "type": "image-input",
+    "label": "Broadcaster icon",
+    "group": "Icons"
+  },
+  "iconModerator": {
+    "type": "image-input",
+    "label": "Moderator icon",
+    "group": "Icons"
+  },
+  "iconVip": {
+    "type": "image-input",
+    "label": "VIP icon",
+    "group": "Icons"
+  },
+  "iconSubscriber": {
+    "type": "image-input",
+    "label": "Subscriber icon",
+    "group": "Icons"
+  },
+  "iconBase": {
+    "type": "image-input",
+    "label": "Base icon",
+    "group": "Icons"
+  },
+
+  "SideBarWidth": {
+    "type": "number",
+    "label": "Side-bar width (%)",
+    "value": 10,
+    "group": "Side Bar"
+  },
+  "SideBarRatio": {
+    "type": "number",
+    "label": "Main side-bar ratio",
+    "value": 0.9,
+    "group": "Side Bar"
+  },
+  "sideBarColor": {
+    "type": "colorpicker",
+    "label": "Side-bar Color",
+    "value": "rgba(231,188,46,1)",
+    "group": "Side Bar"
+  },
+  "SidebarAnimation": {
+    "type": "number",
+    "label": "Sidebar annimation Duration (s)",
+    "value": 2,
+    "group": "Settings"
+  },
+  
+  "messagesLimit": {
+    "type": "number",
+    "label": "Messages limit",
+    "value": 15,
+    "group": "Settings"
+  },
+  "hideCommands": {
+    "label": "Hide lines starting with ! (!command)",
+    "type": "dropdown",
+    "value": "yes",
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "group": "Settings"
+  },
+  "ignoredUsers": {
+    "label": "Ignored users (comma separated)",
+    "type": "text",
+    "value": "StreamElements,OtherBot",
+    "group": "Settings"
+  },
+
+  "EnterAnimation": {
+    "type": "number",
+    "label": "Annimation Duration (ms)",
+    "value": 500,
+    "group": "Settings"
+  },
+
+  "widgetName": {
+    "type": "hidden",
+    "value": "Custom chat"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "LordLumineer"
+  },
+  "widgetVersion": {
+    "type": "hidden",
+    "value": "1.0"
+  },
+  "widgetUpdateUrl": {
+    "type": "hidden",
+    "value": "https://github.com/StreamElements/widgets/blob/master/CustomChat/"
+  }
+}

@@ -1,2 +1,1 @@
-# CustomChatBox
-Custom chat box
+## StreamElements custom widgets
