@@ -1,8 +1,12 @@
 # StreamElements custom widgets
+Feel free to use them, but please credit me if you do so.
+I've done them on my free time, and am NOT (really/yet/maybe never) a professional programmer, so it may not be the best code you've ever seen, but it *works*.
 
+Feel free to share any issues you may encounter, I'll try to fix them as soon as I can.  
+Feel free to share any ideas you may have, I'll try to implement them as soon as I can.
 ## Custom Chat boxes
-
 ### PrettyChat
+__Warning :__ It may still need some work on the even reaction, sometimes it get stuck (I could only test it with SE test tool, not live).
 - Dynamic themes
 - React to different event of your choice (Subs, Raids, Bits, Donations)  
 - You can set custom color for the username
