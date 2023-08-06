@@ -5,6 +5,12 @@
 ### PrettyChat
 - Dynamic themes
 - React to different event of your choice (Subs, Raids, Bits, Donations)  
+- You can set custom color for the username
+- You can choose to display a background color matched to the theme
+- You can chose to display or not every element of the message (username, event, amount) but the message itself.
+- You can set custom icons for the different roles (broadcaster, mod, sub, vip, regular).
+- Chose accounts to not be displayed (ex. bots)
+- Chose to display or not command messages (ex. !so, !discord, !uptime, etc.)
 
 <img src="Capture\CC1.PNG" width="256"/>
 
