@@ -198,12 +198,6 @@ function DonothonCounter(amount) {
   ratio = reachedDonothon / totalDonothon;
   percent = parseInt(ratio * 100);
   leftWidth = widget_width * ratio;
-  
-  //if (leftWidth < 50) {
-  //  leftWidth = "50px";
-  //} else {
-  //  leftWidth = String(percent) + "%";
-  //}
 
   if (displayLine == true) {
     line_Width = lineWidth;
@@ -230,7 +224,6 @@ function DonothonCounter(amount) {
   document.getElementById("TotalID").innerHTML = `${currencySymbol} ${String(totalDonothon)}`;
 
   checkingBoxes();
-
 }
 
 function checkingBoxes(){

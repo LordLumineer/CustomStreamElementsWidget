@@ -5,6 +5,7 @@ I've done them on my free time, and am NOT (really/yet/maybe never) a profession
 Feel free to share any issues you may encounter, I'll try to fix them as soon as I can.  
 Feel free to share any ideas you may have, I'll try to implement them as soon as I can.
 ## Custom Chat boxes
+Here you can find some custom chat boxes I've made for StreamElements.
 ### PrettyChat
 __Warning :__ It may still need some work on the even reaction, sometimes it get stuck (I could only test it with SE test tool, not live).
 - Dynamic themes
@@ -19,6 +20,7 @@ __Warning :__ It may still need some work on the even reaction, sometimes it get
 <img src="Capture\CC1.PNG" width="256"/>
 
 ## Donation Counter
+This is a donation counter, donation counters i've made
 ### With check
 - It reacts to everything so you can compatibilise donation, bits, subs. You can set the ration of the event for your currency (ex. set 1 sub = 2.5 usd).
 - 5 dynamic goals you can set (text and amount), once you reach a certain amount the box get checked.
