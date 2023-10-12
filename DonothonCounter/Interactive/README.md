@@ -83,3 +83,13 @@ If you have any questions, suggestions, or issues, feel free to rise an issue on
 A BIG thank to the [ojcole](https://github.com/ojcole) for the Throne handling code, I couldn't have done it without him.
 
 As said in the homepage I do this on my free time, and am NOT a professional programmer, so it may not be the best code you've ever seen, but it *works*. Feel free to share any issues you may encounter, I'll try to fix them as soon as I can.
+
+### License
+
+Copyright (c) 2023 Lord Lumineer (github -- LordLumineer).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
