@@ -73,8 +73,6 @@ Lastly the `Toggle animation` switch will toggle the animation of the progress b
 
 **CONGRATULATIONS** you are done setting up your widget, you can now hide the settings menu and enjoy your stream.
 
-**IMPORTANT** : Keep in mind that every time you save the widget in StreamElements or reload/refresh the page, the widget will reset to the default settings. I might add a way to export/import the settings/goals in the future.
-
 ### Support
 If you have any questions, suggestions, or issues, feel free to rise an issue on [GitHub](https://github.com/LordLumineer/CustomStreamElementsWidget/issues) contact me on [Twitter](https://twitter.com/lordlumineer)
 
