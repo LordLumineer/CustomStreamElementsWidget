@@ -3,6 +3,7 @@ Track your donations and keep your viewers engaged with our customizable widget.
 
 ## Features
 - Real-time donation goal tracking
+- Retention of the goals and events even if the widget is closed
 - Customizable goal amount and description
 - Customizable overlay goal
 - Real-time tracking of donations, bits, subs
