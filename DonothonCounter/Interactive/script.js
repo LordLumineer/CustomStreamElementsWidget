@@ -293,8 +293,6 @@ function applySettings(obj) {
   );
   nbGoals = obj.nbGoals;
   input_nb_goals.value = nbGoals;
-  adjustColor();
-  donationCounter(0);
 }
 
 let intervalIdx;
@@ -474,6 +472,7 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   button_remove_last.addEventListener("click", function () {
     delete goals[Object.keys(goals).length];
+    goalCount--;
     adjustColor();
     DonationCounter(0);
   });
@@ -512,7 +511,11 @@ window.addEventListener("DOMContentLoaded", function () {
     DonationCounter(0);
   });
   button_remove_all.addEventListener("click", function () {
+    delete goals;
     goals = {};
+    goalCount = 0;
+    goal_list.innerHTML = "";
+    debug_goal_list.innerHTML = "";
     adjustColor();
     DonationCounter(0);
   });
@@ -679,6 +682,8 @@ window.addEventListener("DOMContentLoaded", function () {
     const slider = document.getElementById(input.id.replace("-value", ""));
     slider.value = input.value;
     updateColor();
+    adjustColor();
+    DonationCounter(0);
   }
   adjustColor();
   DonationCounter(0);
@@ -814,7 +819,7 @@ function DonationCounter(amount) {
       });
     }
   }
-  if (amount !== 0) {
+  if (amount !== 0 || goals !== settings_export.goals) {
     saveSettings();
     SE_API.store.set("exportSettings_DonationCounter", settings_export);
   }
