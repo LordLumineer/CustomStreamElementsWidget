@@ -26,6 +26,7 @@ const remaining_total_txt = document.getElementById("remaining-total-txt");
 const toggle_settings_wrap = document.getElementById("toggle-settings-wrap");
 const debug = document.getElementById("debug");
 const refresh_settings = document.getElementById("refresh-settings");
+const save_settings = document.getElementById("save-settings");
 const toggle_debug_goal_list = document.getElementById(
   "toggle-debug-goal-list"
 );
@@ -358,7 +359,7 @@ window.addEventListener("onEventReceived", function (obj) {
       _amount = _amount;
     } else if (gift) {
       _amount = 1;
-    } else if (amount > 1) {
+    } else if (_amount > 1) {
       _amount = _amount;
     } else {
       _amount = 1;
@@ -404,6 +405,10 @@ window.addEventListener("DOMContentLoaded", function () {
       toggle_settings_wrap,
       state_toggle_settings_wrap
     );
+  });
+  save_settings.addEventListener("click", function () {
+    saveSettings();
+    SE_API.store.set("exportSettings_DonationCounter", settings_export);
   });
   refresh_settings.addEventListener("click", function () {
     DonationCounter(0);
