@@ -314,7 +314,6 @@ window.addEventListener("DOMContentLoaded", function () {
         amount: amount,
         reached: false,
       };
-
       // Clear the input fields
       input_goal_description.value = "";
       input_goal_amount.value = "";
@@ -327,8 +326,15 @@ window.addEventListener("DOMContentLoaded", function () {
     SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   button_remove_last.addEventListener("click", function () {
-    delete settings.goals[Object.keys(settings.goals).length];
+    delete settings.goals[settings.goalCount];
     settings.goalCount--;
+    settings.goalCount = Math.max(settings.goalCount, 0);
+    if (Object.keys(settings.goals).length == 0) {
+      settings.goals = {};
+      settings.goalCount = 0;
+      goal_list.innerHTML = "";
+      debug_goal_list.innerHTML = "";
+    }
     adjustColor();
     DonationCounter(0);
     SE_API.store.set("exportSettings_DonationCounter", settings);
@@ -364,6 +370,7 @@ window.addEventListener("DOMContentLoaded", function () {
     // Delete the entry with the smallest "amount"
     if (keyToDelete) {
       delete settings.goals[keyToDelete];
+      settings.goalCount--;
     }
     adjustColor();
     DonationCounter(0);
