@@ -619,7 +619,7 @@ function DonationCounter(amount) {
 
   ratio_txt.innerHTML = `${String(percent)} %`;
   progress_amount_txt.innerHTML = `${currencySymbol} ${String(
-    settings.reachedAmount
+    settings.reachedAmount.toFixed(2)
   )}`;
   remaining_total_txt.innerHTML = `${currencySymbol} ${String(
     settings.totalAmount
