@@ -87,75 +87,35 @@ const blueValue = document.getElementById("blue-value");
 
 const CSS_Variables = document.querySelector(":root");
 
-/* Variables */
-let currencySymbol = "$";
-let twitchID = "";
-
-let totalAmount = 100;
-let reachedAmount = 0;
-
-let goals = {};
-let goalCount = 0;
-
-/* Parameters */
-let state_toggle_settings_wrap = true;
-toggle_settings_wrap.classList.toggle("active", true);
-debug.style.display = "flex";
-let state_toggle_debug_goal_list = true;
-toggle_debug_goal_list.classList.toggle("active", true);
-debug_goal_list.style.display = "flex";
-
-let state_toggle_ctrl_settings = true;
-toggle_ctrl_settings.classList.toggle("active", true);
-ctrl_settings.style.display = "flex";
-
-/* Event Settings */
-let state_toggle_event_settings = false;
-toggle_event_settings.classList.toggle("active", false);
-events_settings.style.display = "none";
-let state_toggle_subs = true;
-toggle_subs.classList.toggle("active", true);
-let sub_factor = 5;
-input_sub_factor.value = 5;
-let state_toggle_bits = true;
-toggle_bits.classList.toggle("active", true);
-let bits_factor = 250;
-input_bits_factor.value = 250;
-let state_toggle_tips = true;
-toggle_tips.classList.toggle("active", true);
-let tips_factor = 1;
-input_tips_factor.value = 1;
-let state_toggle_throne = false;
-toggle_throne.classList.toggle("active", false);
-let throne_username = "";
-let throne_factor = 1;
-input_throne_factor.value = 1;
-
-/* Customization */
-let state_toggle_customization = false;
-toggle_animation.classList.toggle("active", false);
-ctrl_customization.style.display = "none";
-
-let state_toggle_goals = true;
-toggle_goals.classList.toggle("active", true);
-let state_toggle_progress = true;
-toggle_progress.classList.toggle("active", true);
-let selected_goal_alignment = "TL";
-selector_goal_alignment.value = "TL";
-let selected_themes = "lavender";
-selector_themes.value = "lavender";
-custom_accent.style.display = "none";
-let color_custom_accent = "rgb(133, 176, 232)";
-redSlider.value = 133;
-greenSlider.value = 176;
-blueSlider.value = 232;
-
-let state_toggle_animation = true;
-toggle_animation.classList.toggle("active", true);
-CSS_Variables.style.setProperty("--animation", "7s");
-
-let nbGoals = 7;
-input_nb_goals.value = 7;
+/* SETTINGS */
+let settings = {
+  totalAmount: 100,
+  reachedAmount: 0,
+  goals: {},
+  goalCount: 0,
+  state_toggle_settings_wrap: true,
+  state_toggle_debug_goal_list: true,
+  state_toggle_ctrl_settings: true,
+  state_toggle_event_settings: false,
+  state_toggle_subs: true,
+  sub_factor: 5,
+  state_toggle_bits: true,
+  bits_factor: 250,
+  state_toggle_tips: true,
+  tips_factor: 1,
+  state_toggle_throne: false,
+  throne_username: "",
+  throne_factor: 1,
+  state_toggle_customization: false,
+  state_toggle_goals: true,
+  state_toggle_progress: true,
+  selected_goal_alignment: "TL",
+  selected_themes: "lavender",
+  color_custom_accent: "rgb(133, 176, 232)",
+  state_toggle_animation: true,
+  nbGoals: 7,
+};
+applySettings(settings);
 
 const emptyGoal = {
   amount: 0,
@@ -171,131 +131,7 @@ let colors = {
   tertiary_color: "rgb(0, 0, 255)",
 };
 
-/* Export Settings */
-let settings_export = {
-  totalAmount: totalAmount,
-  reachedAmount: reachedAmount,
-  goals: goals,
-  goalCount: goalCount,
-  state_toggle_settings_wrap: state_toggle_settings_wrap,
-  state_toggle_debug_goal_list: state_toggle_debug_goal_list,
-  state_toggle_ctrl_settings: state_toggle_ctrl_settings,
-  state_toggle_event_settings: state_toggle_event_settings,
-  state_toggle_subs: state_toggle_subs,
-  sub_factor: sub_factor,
-  state_toggle_bits: state_toggle_bits,
-  bits_factor: bits_factor,
-  state_toggle_tips: state_toggle_tips,
-  tips_factor: tips_factor,
-  state_toggle_throne: state_toggle_throne,
-  throne_username: throne_username,
-  throne_factor: throne_factor,
-  state_toggle_customization: state_toggle_customization,
-  state_toggle_goals: state_toggle_goals,
-  state_toggle_progress: state_toggle_progress,
-  selected_goal_alignment: selected_goal_alignment,
-  selected_themes: selected_themes,
-  color_custom_accent: color_custom_accent,
-  state_toggle_animation: state_toggle_animation,
-  nbGoals: nbGoals,
-};
-function saveSettings() {
-  settings_export.totalAmount = totalAmount;
-  settings_export.reachedAmount = reachedAmount;
-  settings_export.goals = goals;
-  settings_export.goalCount = goalCount;
-  settings_export.state_toggle_settings_wrap = state_toggle_settings_wrap;
-  settings_export.state_toggle_debug_goal_list = state_toggle_debug_goal_list;
-  settings_export.state_toggle_ctrl_settings = state_toggle_ctrl_settings;
-  settings_export.state_toggle_event_settings = state_toggle_event_settings;
-  settings_export.state_toggle_subs = state_toggle_subs;
-  settings_export.sub_factor = sub_factor;
-  settings_export.state_toggle_bits = state_toggle_bits;
-  settings_export.bits_factor = bits_factor;
-  settings_export.state_toggle_tips = state_toggle_tips;
-  settings_export.tips_factor = tips_factor;
-  settings_export.state_toggle_throne = state_toggle_throne;
-  settings_export.throne_username = throne_username;
-  settings_export.throne_factor = throne_factor;
-  settings_export.state_toggle_customization = state_toggle_customization;
-  settings_export.state_toggle_goals = state_toggle_goals;
-  settings_export.state_toggle_progress = state_toggle_progress;
-  settings_export.selected_goal_alignment = selected_goal_alignment;
-  settings_export.selected_themes = selected_themes;
-  settings_export.color_custom_accent = color_custom_accent;
-  settings_export.state_toggle_animation = state_toggle_animation;
-  settings_export.nbGoals = nbGoals;
-}
-function applySettings(obj) {
-  totalAmount = obj.totalAmount;
-  reachedAmount = obj.reachedAmount;
-  goals = obj.goals;
-  goalCount = obj.goalCount;
-
-  state_toggle_settings_wrap = obj.state_toggle_settings_wrap;
-  toggle_settings_wrap.classList.toggle("active", state_toggle_settings_wrap);
-  debug.style.display = state_toggle_settings_wrap ? "flex" : "none";
-
-  state_toggle_debug_goal_list = obj.state_toggle_debug_goal_list;
-  toggle_debug_goal_list.classList.toggle(
-    "active",
-    state_toggle_debug_goal_list
-  );
-  debug_goal_list.style.display = state_toggle_debug_goal_list
-    ? "flex"
-    : "none";
-
-  state_toggle_ctrl_settings = obj.state_toggle_ctrl_settings;
-  toggle_ctrl_settings.classList.toggle("active", state_toggle_ctrl_settings);
-  ctrl_settings.style.display = state_toggle_ctrl_settings ? "flex" : "none";
-  state_toggle_event_settings = obj.state_toggle_event_settings;
-  toggle_event_settings.classList.toggle("active", state_toggle_event_settings);
-  events_settings.style.display = state_toggle_event_settings ? "flex" : "none";
-  state_toggle_subs = obj.state_toggle_subs;
-  toggle_subs.classList.toggle("active", state_toggle_subs);
-  sub_factor = obj.sub_factor;
-  input_sub_factor.value = sub_factor;
-  state_toggle_bits = obj.state_toggle_bits;
-  toggle_bits.classList.toggle("active", state_toggle_bits);
-  bits_factor = obj.bits_factor;
-  input_bits_factor.value = bits_factor;
-  state_toggle_tips = obj.state_toggle_tips;
-  toggle_tips.classList.toggle("active", state_toggle_tips);
-  tips_factor = obj.tips_factor;
-  input_tips_factor.value = tips_factor;
-  state_toggle_throne = obj.state_toggle_throne;
-  toggle_throne.classList.toggle("active", state_toggle_throne);
-  throne_username = obj.throne_username;
-  input_throne_username.value = throne_username;
-  throne_factor = obj.throne_factor;
-  input_throne_factor.value = throne_factor;
-  state_toggle_customization = obj.state_toggle_customization;
-  toggle_customization.classList.toggle("active", state_toggle_customization);
-  ctrl_customization.style.display = state_toggle_customization
-    ? "flex"
-    : "none";
-  state_toggle_goals = obj.state_toggle_goals;
-  toggle_goals.classList.toggle("active", state_toggle_goals);
-  state_toggle_progress = obj.state_toggle_progress;
-  toggle_progress.classList.toggle("active", state_toggle_progress);
-  selected_goal_alignment = obj.selected_goal_alignment;
-  selector_goal_alignment.value = selected_goal_alignment;
-  selected_themes = obj.selected_themes;
-  selector_themes.value = selected_themes;
-  color_custom_accent = obj.color_custom_accent;
-  redSlider.value = color_custom_accent.split(", ")[0].split("(")[1];
-  greenSlider.value = color_custom_accent.split(", ")[1];
-  blueSlider.value = color_custom_accent.split(", ")[2].split(")")[0];
-  state_toggle_animation = obj.state_toggle_animation;
-  toggle_animation.classList.toggle("active", state_toggle_animation);
-  CSS_Variables.style.setProperty(
-    "--animation",
-    state_toggle_animation ? "7s" : "0s"
-  );
-  nbGoals = obj.nbGoals;
-  input_nb_goals.value = nbGoals;
-}
-
+/* For Throne */
 let intervalIdx;
 const clearIt = () => {
   if (intervalIdx !== undefined) clearInterval(intervalIdx);
@@ -315,60 +151,73 @@ window.addEventListener("onWidgetLoad", function (obj) {
   /* Load Settings */
   SE_API.store.get("exportSettings_DonationCounter").then((obj) => {
     if (obj !== null) {
-      settings_export = obj;
-      applySettings(settings_export);
+      settings = obj;
+      applySettings(settings);
       adjustColor();
       DonationCounter(0);
+      console.log("Settings loaded");
     }
   });
-
 });
+
 // Listen for StreamElements events
 window.addEventListener("onEventReceived", function (obj) {
   if (
     obj.detail.listener === "event" ||
-    obj.detail.listener === "kvstore:update"
+    obj.detail.listener === "alertService" ||
+    obj.detail.listener === "bot" ||
+    obj.detail.listener === "kvstore" ||
+    obj.detail.listener === "follower-latest" ||
+    obj.detail.listener === "host-latest" ||
+    obj.detail.listener === "raid-latest" ||
+    obj.detail.listener === "message" ||
+    obj.detail.listener === "delete-message" ||
+    obj.detail.listener === "delete-messages" ||
+    obj.detail.listener === "event:skip" ||
+    obj.detail.listener === "alertService:toggleSound" ||
+    obj.detail.listener === "bot:counter" ||
+    obj.detail.listener === "kvstore:update" ||
+    obj.detail.listener === "widget-button"
   ) {
     return;
   }
-  if (obj.detail.listener === "cheer-latest" && state_toggle_bits) {
-    let _amount = obj.detail.event.amount;
-    amount = _amount / bits_factor;
-  }
-  if (obj.detail.listener === "tip-latest" && state_toggle_tips) {
-    let _amount = obj.detail.event.amount;
-    amount = _amount * tips_factor;
-  }
-  if (obj.detail.listener === "subscriber-latest" && state_toggle_subs) {
-    let event = obj.detail.event;
-    //temp amount counters
-    let _amount = event.amount;
-
-    // deal with gifts from here onwards
-    let gift = event.gifted;
-
-    // idk what community gifts do, so i'm not gonna bother
-    if (event.isCommunityGift) {
-      return;
+  if (
+    obj.detail.listener === "subscriber-latest" ||
+    obj.detail.listener === "cheer-latest" ||
+    obj.detail.listener === "tip-latest"
+  ) {
+    console.log("Event: " + obj.detail.listener + " received");
+    if (obj.detail.listener === "cheer-latest" && settings.state_toggle_bits) {
+      DonationCounter(obj.detail.event.amount / settings.bits_factor);
     }
-
-    // i'm honestly extremely confused why they have 3 different gift fields
-    let bulk = event.bulkGifted;
-
-    if (bulk) {
-      _amount = _amount;
-    } else if (gift) {
-      _amount = 1;
-    } else if (_amount > 1) {
-      _amount = _amount;
-    } else {
-      _amount = 1;
+    if (obj.detail.listener === "tip-latest" && settings.state_toggle_tips) {
+      DonationCounter(obj.detail.event.amount * settings.tips_factor);
     }
-    //math on the sub amount
-    amount = _amount * sub_factor;
+    if (obj.detail.listener === "subscriber-latest" && settings.state_toggle_subs) {
+      let event = obj.detail.event;
+      //temp amount counters
+      let _amount = event.amount;
+      let gift = event.gifted;
+      let bulk = event.bulkGifted;
+
+      if (event.isCommunityGift) {
+        return;
+      }
+      if (bulk) {
+        _amount = _amount;
+      } else if (gift) {
+        _amount = 1;
+      } else if (_amount > 1) {
+        _amount = _amount;
+      } else {
+        _amount = 1;
+      }
+      //math on the sub amount
+      DonationCounter(_amount * settings.sub_factor);
+    }
+    adjustColor();
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   }
-  DonationCounter(amount);
-  adjustColor();
   return;
 });
 
@@ -396,52 +245,53 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Add event listeners to the input fields
   toggle_settings_wrap.addEventListener("click", function () {
-    if (state_toggle_settings_wrap) {
+    if (settings.state_toggle_settings_wrap) {
       debug.style.display = "none";
     } else {
       debug.style.display = "flex";
     }
-    state_toggle_settings_wrap = toggleSwitch(
+    settings.state_toggle_settings_wrap = toggleSwitch(
       toggle_settings_wrap,
-      state_toggle_settings_wrap
+      settings.state_toggle_settings_wrap
     );
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   save_settings.addEventListener("click", function () {
-    saveSettings();
-    SE_API.store.set("exportSettings_DonationCounter", settings_export);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   refresh_settings.addEventListener("click", function () {
     DonationCounter(0);
     SE_API.store.get("exportSettings_DonationCounter").then((obj) => {
       if (obj !== null) {
-        settings_export = obj;
-        applySettings(settings_export);
+        settings = obj;
+        applySettings(settings);
         adjustColor();
         DonationCounter(0);
+        console.log("Settings loaded");
       }
     });
   });
 
   toggle_debug_goal_list.addEventListener("click", function () {
-    if (state_toggle_debug_goal_list) {
+    if (settings.state_toggle_debug_goal_list) {
       debug_goal_list.style.display = "none";
     } else {
       debug_goal_list.style.display = "flex";
     }
-    state_toggle_debug_goal_list = toggleSwitch(
+    settings.state_toggle_debug_goal_list = toggleSwitch(
       toggle_debug_goal_list,
-      state_toggle_debug_goal_list
+      settings.state_toggle_debug_goal_list
     );
   });
   toggle_ctrl_settings.addEventListener("click", function () {
-    if (state_toggle_ctrl_settings) {
+    if (settings.state_toggle_ctrl_settings) {
       ctrl_settings.style.display = "none";
     } else {
       ctrl_settings.style.display = "flex";
     }
-    state_toggle_ctrl_settings = toggleSwitch(
+    settings.state_toggle_ctrl_settings = toggleSwitch(
       toggle_ctrl_settings,
-      state_toggle_ctrl_settings
+      settings.state_toggle_ctrl_settings
     );
   });
   /* Goal Panel */
@@ -454,12 +304,12 @@ window.addEventListener("DOMContentLoaded", function () {
   button_add_goal.addEventListener("click", function () {
     // Check if both fields are filled
     if (isFormValid()) {
-      goalCount++;
+      settings.goalCount++;
       // Add Goal to the list
       const description = input_goal_description.value;
       const amount = input_goal_amount.value;
 
-      goals[goalCount] = {
+      settings.goals[settings.goalCount] = {
         description: description,
         amount: amount,
         reached: false,
@@ -474,55 +324,59 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   button_remove_last.addEventListener("click", function () {
-    delete goals[Object.keys(goals).length];
-    goalCount--;
+    delete settings.goals[Object.keys(settings.goals).length];
+    settings.goalCount--;
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   button_remove_bottom.addEventListener("click", function () {
     // Find the entry with the smallest "amount"
     let minAmount = Infinity;
     let keyToDelete = null;
-    for (const key in goals) {
-      if (goals[key].amount < minAmount) {
-        minAmount = goals[key].amount;
+    for (const key in settings.goals) {
+      if (settings.goals[key].amount < minAmount) {
+        minAmount = settings.goals[key].amount;
         keyToDelete = key;
       }
     }
     // Delete the entry with the smallest "amount"
     if (keyToDelete) {
-      delete goals[keyToDelete];
+      delete settings.goals[keyToDelete];
     }
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   button_remove_top.addEventListener("click", function () {
     // Find the entry with the smallest "amount"
     let maxAmount = 0;
     let keyToDelete = null;
-    for (const key in goals) {
-      if (goals[key].amount > maxAmount) {
-        maxAmount = goals[key].amount;
+    for (const key in settings.goals) {
+      if (settings.goals[key].amount > maxAmount) {
+        maxAmount = settings.goals[key].amount;
         keyToDelete = key;
       }
     }
     // Delete the entry with the smallest "amount"
     if (keyToDelete) {
-      delete goals[keyToDelete];
+      delete settings.goals[keyToDelete];
     }
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
   button_remove_all.addEventListener("click", function () {
-    delete goals;
-    goals = {};
-    goalCount = 0;
+    settings.goals = {};
+    settings.goalCount = 0;
     goal_list.innerHTML = "";
     debug_goal_list.innerHTML = "";
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
 
   /* Amount Panel */
@@ -530,117 +384,137 @@ window.addEventListener("DOMContentLoaded", function () {
     button_applyTotal.disabled = !isTotalEntered();
   });
   button_applyTotal.addEventListener("click", function () {
-    const total = parseInt(input_total.value);
-    totalAmount = total;
+    const total = parseFloat(input_total.value);
+    settings.totalAmount = total;
 
     adjustColor();
     DonationCounter(0);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
 
   input_offset.addEventListener("input", function () {
     button_apply_offset.disabled = !isOffsetEntered();
   });
   button_apply_offset.addEventListener("click", function () {
-    const offset = parseInt(input_offset.value);
+    const offset = parseFloat(input_offset.value);
 
     adjustColor();
     DonationCounter(offset);
+    SE_API.store.set("exportSettings_DonationCounter", settings);
   });
 
   button_reset.addEventListener("click", function () {
-    goals = {};
-    goalCount = 0;
-    reachedAmount = 0;
+    settings.goals = {};
+    settings.goalCount = 0;
+    settings.reachedAmount = 0;
     adjustColor();
     DonationCounter(0);
   });
 
   /* Event Panel */
   toggle_event_settings.addEventListener("click", function () {
-    if (state_toggle_event_settings) {
+    if (settings.state_toggle_event_settings) {
       events_settings.style.display = "none";
     } else {
       events_settings.style.display = "flex";
     }
-    state_toggle_event_settings = toggleSwitch(
+    settings.state_toggle_event_settings = toggleSwitch(
       toggle_event_settings,
-      state_toggle_event_settings
+      settings.state_toggle_event_settings
     );
   });
   toggle_subs.addEventListener("click", function () {
-    state_toggle_subs = toggleSwitch(toggle_subs, state_toggle_subs);
+    settings.state_toggle_subs = toggleSwitch(
+      toggle_subs,
+      settings.state_toggle_subs
+    );
   });
   input_sub_factor.addEventListener("input", function () {
-    sub_factor = parseFloat(input_sub_factor.value);
+    settings.sub_factor = parseFloat(input_sub_factor.value);
   });
   toggle_bits.addEventListener("click", function () {
-    state_toggle_bits = toggleSwitch(toggle_bits, state_toggle_bits);
+    settings.state_toggle_bits = toggleSwitch(
+      toggle_bits,
+      settings.state_toggle_bits
+    );
   });
   input_bits_factor.addEventListener("input", function () {
-    bits_factor = parseFloat(input_bits_factor.value);
+    settings.bits_factor = parseFloat(input_bits_factor.value);
   });
   toggle_tips.addEventListener("click", function () {
-    state_toggle_tips = toggleSwitch(toggle_tips, state_toggle_tips);
+    settings.state_toggle_tips = toggleSwitch(
+      toggle_tips,
+      settings.state_toggle_tips
+    );
   });
   input_tips_factor.addEventListener("input", function () {
-    tips_factor = parseFloat(input_tips_factor.value); //parseInt(input_tips_factor.value);
+    settings.tips_factor = parseFloat(input_tips_factor.value);
   });
   toggle_throne.addEventListener("click", function () {
     if (isThroneEntered()) {
-      if (state_toggle_throne) {
+      if (settings.state_toggle_throne) {
         clearIt();
       } else {
         setIt();
       }
-      state_toggle_throne = toggleSwitch(toggle_throne, state_toggle_throne);
+      settings.state_toggle_throne = toggleSwitch(
+        toggle_throne,
+        settings.state_toggle_throne
+      );
     }
   });
+  input_throne_username.addEventListener("input", function () {
+    settings.throne_username = input_throne_username.value;
+  });
   input_throne_factor.addEventListener("input", function () {
-    throne_factor = parseFloat(input_throne_factor.value);
+    settings.throne_factor = parseFloat(input_throne_factor.value);
   });
 
   /* Customization Panel */
   toggle_customization.addEventListener("click", function () {
-    if (state_toggle_customization) {
+    if (settings.state_toggle_customization) {
       ctrl_customization.style.display = "none";
     } else {
       ctrl_customization.style.display = "flex";
     }
-    state_toggle_customization = toggleSwitch(
+    settings.state_toggle_customization = toggleSwitch(
       toggle_customization,
-      state_toggle_customization
+      settings.state_toggle_customization
     );
   });
   toggle_goals.addEventListener("click", function () {
-    if (state_toggle_goals) {
+    if (settings.state_toggle_goals) {
       goal_list.style.display = "none";
     } else {
       goal_list.style.display = "flex";
     }
-    state_toggle_goals = toggleSwitch(toggle_goals, state_toggle_goals);
+    settings.state_toggle_goals = toggleSwitch(
+      toggle_goals,
+      settings.state_toggle_goals
+    );
   });
   toggle_progress.addEventListener("click", function () {
-    if (state_toggle_progress) {
+    if (settings.state_toggle_progress) {
       progress_bar.style.display = "none";
     } else {
       progress_bar.style.display = "flex";
     }
-    state_toggle_progress = toggleSwitch(
+    settings.state_toggle_progress = toggleSwitch(
       toggle_progress,
-      state_toggle_progress
+      settings.state_toggle_progress
     );
   });
   input_nb_goals.addEventListener("input", function () {
-    nbGoals = parseInt(input_nb_goals.value);
+    settings.nbGoals = parseInt(input_nb_goals.value);
     DonationCounter(0);
   });
   selector_goal_alignment.addEventListener("input", function () {
-    selected_goal_alignment = selector_goal_alignment.value;
+    settings.selected_goal_alignment = selector_goal_alignment.value;
     DonationCounter(0);
   });
   selector_themes.addEventListener("input", function () {
-    selected_themes = selector_themes.value;
-    if (selected_themes == "custom") {
+    settings.selected_themes = selector_themes.value;
+    if (settings.selected_themes == "custom") {
       custom_accent.style.display = "flex";
     } else {
       custom_accent.style.display = "none";
@@ -649,14 +523,14 @@ window.addEventListener("DOMContentLoaded", function () {
     DonationCounter(0);
   });
   toggle_animation.addEventListener("click", function () {
-    if (state_toggle_animation) {
+    if (settings.state_toggle_animation) {
       CSS_Variables.style.setProperty("--animation", "0s");
     } else {
       CSS_Variables.style.setProperty("--animation", "7s");
     }
-    state_toggle_animation = toggleSwitch(
+    settings.state_toggle_animation = toggleSwitch(
       toggle_animation,
-      state_toggle_animation
+      settings.state_toggle_animation
     );
     DonationCounter(0);
   });
@@ -673,8 +547,8 @@ window.addEventListener("DOMContentLoaded", function () {
     const red = redSlider.value;
     const green = greenSlider.value;
     const blue = blueSlider.value;
-    color_custom_accent = `rgb(${red}, ${green}, ${blue})`;
-    colorPreview.style.backgroundColor = color_custom_accent;
+    settings.color_custom_accent = `rgb(${red}, ${green}, ${blue})`;
+    colorPreview.style.backgroundColor = settings.color_custom_accent;
     redValue.value = red;
     greenValue.value = green;
     blueValue.value = blue;
@@ -696,8 +570,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 // Diff functions for each event type
 function DonationCounter(amount) {
-  reachedAmount += amount;
-  const ratio = reachedAmount / totalAmount;
+  settings.reachedAmount += amount;
+  const ratio = settings.reachedAmount / settings.totalAmount;
   const percent = parseInt(ratio * 100);
 
   checkingBoxes();
@@ -712,11 +586,14 @@ function DonationCounter(amount) {
   CSS_Variables.style.setProperty("--accent_color", colors.accent_color);
   CSS_Variables.style.setProperty("--tertiary_color", colors.tertiary_color);
 
-  if (selected_goal_alignment == "TR" || selected_goal_alignment == "BR") {
+  if (
+    settings.selected_goal_alignment == "TR" ||
+    settings.selected_goal_alignment == "BR"
+  ) {
     CSS_Variables.style.setProperty("--alignGoalsHor", "flex-end");
   } else if (
-    selected_goal_alignment == "TL" ||
-    selected_goal_alignment == "BL"
+    settings.selected_goal_alignment == "TL" ||
+    settings.selected_goal_alignment == "BL"
   ) {
     CSS_Variables.style.setProperty("--alignGoalsHor", "flex-start");
   } else {
@@ -724,9 +601,9 @@ function DonationCounter(amount) {
   }
 
   if (
-    selected_goal_alignment == "TL" ||
-    selected_goal_alignment == "TR" ||
-    selected_goal_alignment == "TC"
+    settings.selected_goal_alignment == "TL" ||
+    settings.selected_goal_alignment == "TR" ||
+    settings.selected_goal_alignment == "TC"
   ) {
     CSS_Variables.style.setProperty("--alignGoalsVer", "column");
   } else {
@@ -734,26 +611,32 @@ function DonationCounter(amount) {
   }
 
   ratio_txt.innerHTML = `${String(percent)} %`;
-  progress_amount_txt.innerHTML = `${currencySymbol} ${String(reachedAmount)}`;
-  remaining_total_txt.innerHTML = `${currencySymbol} ${String(totalAmount)}`;
+  progress_amount_txt.innerHTML = `${currencySymbol} ${String(
+    settings.reachedAmount
+  )}`;
+  remaining_total_txt.innerHTML = `${currencySymbol} ${String(
+    settings.totalAmount
+  )}`;
 
-  if (Object.keys(goals).length > 0) {
+  if (Object.keys(settings.goals).length > 0) {
     debug_goal_list.innerHTML = "";
-    Object.keys(goals).forEach((key) => {
-      const goal = goals[key];
+    Object.keys(settings.goals).forEach((key) => {
+      const goal = settings.goals[key];
       const elementDiv2 = document.createElement("div");
       elementDiv2.classList.add("debug-goal-container");
       elementDiv2.innerHTML = `Reached: ${goal.reached} - Description: ${goal.description} - Amount: ${goal.amount}`;
       debug_goal_list.appendChild(elementDiv2);
     });
 
-    if (state_toggle_goals) {
+    if (settings.state_toggle_goals) {
       var goalsToDisplay = [];
 
-      const reachedGoals = Object.values(goals).filter((goal) => goal.reached);
+      const reachedGoals = Object.values(settings.goals).filter(
+        (goal) => goal.reached
+      );
       if (reachedGoals.length > 0) {
         // Filter goals where "reached" is true and find the highest one
-        const highestReachedGoal = Object.values(goals)
+        const highestReachedGoal = Object.values(settings.goals)
           .filter((goal) => goal.reached)
           .reduce((highest, current) =>
             parseInt(current.amount) > parseInt(highest.amount)
@@ -762,19 +645,19 @@ function DonationCounter(amount) {
           );
 
         // Filter goals where "reached" is false, sort them by "amount" in ascending order, and take the lowest nbGoals
-        const lowestUnreachedGoals = Object.values(goals)
+        const lowestUnreachedGoals = Object.values(settings.goals)
           .filter((goal) => !goal.reached)
           .sort((a, b) => parseInt(a.amount) - parseInt(b.amount))
-          .slice(0, nbGoals);
+          .slice(0, settings.nbGoals);
 
         // Create an array to display the selected goals
         goalsToDisplay = [highestReachedGoal, ...lowestUnreachedGoals];
       } else {
         // Filter goals where "reached" is false, sort them by "amount" in ascending order, and take the lowest nbGoals
-        const lowestUnreachedGoals = Object.values(goals)
+        const lowestUnreachedGoals = Object.values(settings.goals)
           .filter((goal) => !goal.reached)
           .sort((a, b) => parseInt(a.amount) - parseInt(b.amount))
-          .slice(0, nbGoals);
+          .slice(0, settings.nbGoals);
 
         // Create an array to display the selected goals
         goalsToDisplay = [...lowestUnreachedGoals];
@@ -824,30 +707,92 @@ function DonationCounter(amount) {
       });
     }
   }
-  if (amount !== 0 || goals !== settings_export.goals) {
-    saveSettings();
-    SE_API.store.set("exportSettings_DonationCounter", settings_export);
-  }
 }
 
 function checkingBoxes() {
-  for (const key in goals) {
-    if (reachedAmount >= goals[key].amount) {
-      if (!goals[key].reached) {
-        goals[key].reached = true;
-        goals[key].description = goals[key].description.strike() + " - Reached";
+  for (const key in settings.goals) {
+    if (settings.reachedAmount >= settings.goals[key].amount) {
+      if (!settings.goals[key].reached) {
+        settings.goals[key].reached = true;
+        settings.goals[
+          key
+        ].description = `<s>${settings.goals[key].description}</s> - Reached`;
       }
     } else {
-      goals[key].reached = false;
+      settings.goals[key].reached = false;
+      settings.goals[key].description = settings.goals[key].description.replace(
+        /<s>|<\/s>/g,
+        ""
+      );
     }
   }
+}
+
+function applySettings(obj) {
+  toggle_settings_wrap.classList.toggle(
+    "active",
+    obj.state_toggle_settings_wrap
+  );
+  debug.style.display = obj.state_toggle_settings_wrap ? "flex" : "none";
+  toggle_debug_goal_list.classList.toggle(
+    "active",
+    obj.state_toggle_debug_goal_list
+  );
+  debug_goal_list.style.display = obj.state_toggle_debug_goal_list
+    ? "flex"
+    : "none";
+  toggle_ctrl_settings.classList.toggle(
+    "active",
+    obj.state_toggle_ctrl_settings
+  );
+  ctrl_settings.style.display = obj.state_toggle_ctrl_settings
+    ? "flex"
+    : "none";
+  toggle_event_settings.classList.toggle(
+    "active",
+    obj.state_toggle_event_settings
+  );
+  events_settings.style.display = obj.state_toggle_event_settings
+    ? "flex"
+    : "none";
+  toggle_subs.classList.toggle("active", obj.state_toggle_subs);
+  input_sub_factor.value = obj.sub_factor;
+  toggle_bits.classList.toggle("active", obj.state_toggle_bits);
+  input_bits_factor.value = obj.bits_factor;
+  toggle_tips.classList.toggle("active", obj.state_toggle_tips);
+  input_tips_factor.value = obj.tips_factor;
+  toggle_throne.classList.toggle("active", obj.state_toggle_throne);
+  input_throne_username.value = obj.throne_username;
+  input_throne_factor.value = obj.throne_factor;
+  toggle_customization.classList.toggle(
+    "active",
+    obj.state_toggle_customization
+  );
+  ctrl_customization.style.display = obj.state_toggle_customization
+    ? "flex"
+    : "none";
+  toggle_goals.classList.toggle("active", obj.state_toggle_goals);
+  toggle_progress.classList.toggle("active", obj.state_toggle_progress);
+  selector_goal_alignment.value = obj.selected_goal_alignment;
+  selector_themes.value = obj.selected_themes;
+  custom_accent.style.display =
+    obj.selected_themes == "custom" ? "flex" : "none";
+  redSlider.value = obj.color_custom_accent.split(", ")[0].split("(")[1];
+  greenSlider.value = obj.color_custom_accent.split(", ")[1];
+  blueSlider.value = obj.color_custom_accent.split(", ")[2].split(")")[0];
+  toggle_animation.classList.toggle("active", obj.state_toggle_animation);
+  CSS_Variables.style.setProperty(
+    "--animation",
+    obj.state_toggle_animation ? "7s" : "0s"
+  );
+  input_nb_goals.value = obj.nbGoals;
 }
 
 // Useful functions
 function adjustColor() {
   reg_color = { h: 260, s: 18, l: 47 };
   theme_Color = { h: 260, s: 18, l: 47 };
-  switch (selected_themes) {
+  switch (settings.selected_themes) {
     case "gold":
       theme_Color = { h: 35, s: 90, l: 70 };
       break;
@@ -858,7 +803,9 @@ function adjustColor() {
       theme_Color = { h: 0, s: 100, l: 82 };
       break;
     case "custom":
-      const [r, g, b, a] = color_custom_accent.match(/\d+/g).map(Number);
+      const [r, g, b, a] = settings.color_custom_accent
+        .match(/\d+/g)
+        .map(Number);
       let hue_accent = rgb2hsl(r, g, b);
       theme_Color = hue_accent;
       break;
@@ -1104,7 +1051,7 @@ const items = new Set();
 const loadData = async () => {
   const contents = await fetch(
     "https://lycvypuyjp6lnj2hvwrjnvlddi0czlsz.lambda-url.eu-north-1.on.aws/?" +
-      new URLSearchParams({ username: input_throne_username.value }),
+      new URLSearchParams({ username: settings.throne_username }),
     {
       method: "GET",
     }
@@ -1151,7 +1098,7 @@ const refresher = async () => {
     if (priceFormatter(totalSinceStart) > old_Total) {
       console.log("new donation");
       DonationCounter(
-        (priceFormatter(totalSinceStart) - old_Total) * throne_factor
+        (priceFormatter(totalSinceStart) - old_Total) * settings.throne_factor
       );
       old_Total = priceFormatter(totalSinceStart);
     }
