@@ -27,7 +27,7 @@ Track your donations and keep your viewers engaged with our customizable widget.
 ### Configuration
 Once you've added the widget into your streaming software of your choice, you can configure it by interacting with the page content (in obs, select the browser source and click on "interact" at the bottom right of the preview window).
 
-<img src="../../Capture/DonothonV2-Default.PNG" height=512 alt="Default view"/>
+<img src="./img/DonothonV2-Default.PNG" height=512 alt="Default view"/>
 
 for the followings examples, I've added 10 bogus goals (in no particular order) and set an offset of 2 to display the capabilities of the widget.
 
@@ -35,18 +35,18 @@ for the followings examples, I've added 10 bogus goals (in no particular order) 
 
 The `Show settings` switch will show or hide the settings menu.
 
-<img src="../../Capture/DonothonV2-SettingsHidden.PNG" height=256 alt="Settings hidden"/>
+<img src="./img/DonothonV2-SettingsHidden.PNG" height=256 alt="Settings hidden"/>
 
 
 As you can see on the settings menu on the right, you can see a list of all the goals you've set, in the order you have added them. You can see which one are reached by them being barred. This list can be hidden with the `Show debug goal list` switch.
 
-<img src="../../Capture/DonothonV2-goals.PNG" height="256" alt="Widget with goals"/>
+<img src="./img/DonothonV2-goals.PNG" height="256" alt="Widget with goals"/>
 
 Once you are done setting up your goals, I suggest you to hide the control settings with the `Show Control settings` switch and hide the debug goals list.
 
 Now by switching `Show events configuration, it uses as currency the one you set in StreamElements` you can configure which events you want to track and how much they are worth in your currency. You can also set the ratio of the Throne wishlist to your currency.
 
-<img src="../../Capture/DonothonV2-events-settings.PNG" height="256" alt="events settings"/> 
+<img src="./img/DonothonV2-events-settings.PNG" height="256" alt="events settings"/> 
 
 However you need to input your Throne username (the same present in your throne url) in the `Throne username` field.
 
@@ -57,7 +57,7 @@ Now that you have set up your goals and events, you can customize the widget to 
 
 To show or hide the customization settings, use the `Show customization settings` switch.
 
-<img src="../../Capture/DonothonV2-customization.PNG" height="256" alt="customization settings" />
+<img src="./img/DonothonV2-customization.PNG" height="256" alt="customization settings" />
 
 You can choose to show or hide the individual goals with the `Show Goals` switch.
 The same way with `Show Progress` you can choose to show or hide the progress bar.
@@ -68,7 +68,7 @@ You have 6 different positions to choose for the goals in relation to the progre
 
 To select a theme you have 4 options, 3 presets (Gold, Peach, Lavender) and Custom. If you choose custom, a color selector will appear then you can choose the accent color and the widget will adapt accordingly.
 
-<img src="../../Capture/DonothonV2-customcolor.PNG" height="256" alt="cutom color" />
+<img src="./img/DonothonV2-customcolor.PNG" height="256" alt="cutom color" />
 
 Lastly the `Toggle animation` switch will toggle the animation of the progress bar.
 
