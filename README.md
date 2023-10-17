@@ -1,4 +1,7 @@
 # StreamElements custom widgets
+
+This is the DEVELOPMENT Repository, it may contain bugs, and is not meant to be used as is.
+
 Feel free to use them, but please credit me if you do so.
 I've done them on my free time, and am NOT (really/yet/maybe never) a professional programmer, so it may not be the best code you've ever seen, but it *works*.
 
